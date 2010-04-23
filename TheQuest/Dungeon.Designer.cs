@@ -37,6 +37,15 @@
             this.BluePotionInvSprite = new System.Windows.Forms.PictureBox();
             this.BowInvSprite = new System.Windows.Forms.PictureBox();
             this.MaceInvSprite = new System.Windows.Forms.PictureBox();
+            this.HitPointPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.PlayerHitPointsCaption = new System.Windows.Forms.Label();
+            this.BatHitPointsCaption = new System.Windows.Forms.Label();
+            this.GhostHitPointsCaption = new System.Windows.Forms.Label();
+            this.GhoulHitPointsCaption = new System.Windows.Forms.Label();
+            this.PlayerHitPoints = new System.Windows.Forms.Label();
+            this.BatHitPoints = new System.Windows.Forms.Label();
+            this.GhostHitPoints = new System.Windows.Forms.Label();
+            this.GhoulHitPoints = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SwordSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BatSprite)).BeginInit();
@@ -51,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BluePotionInvSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BowInvSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaceInvSprite)).BeginInit();
+            this.HitPointPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // PlayerSprite
@@ -219,13 +229,118 @@
             this.MaceInvSprite.TabStop = false;
             this.MaceInvSprite.Visible = false;
             // 
+            // HitPointPanel
+            // 
+            this.HitPointPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.HitPointPanel.ColumnCount = 2;
+            this.HitPointPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
+            this.HitPointPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66F));
+            this.HitPointPanel.Controls.Add(this.PlayerHitPointsCaption, 0, 0);
+            this.HitPointPanel.Controls.Add(this.BatHitPointsCaption, 0, 1);
+            this.HitPointPanel.Controls.Add(this.GhostHitPointsCaption, 0, 2);
+            this.HitPointPanel.Controls.Add(this.GhoulHitPointsCaption, 0, 3);
+            this.HitPointPanel.Controls.Add(this.PlayerHitPoints, 1, 0);
+            this.HitPointPanel.Controls.Add(this.BatHitPoints, 1, 1);
+            this.HitPointPanel.Controls.Add(this.GhostHitPoints, 1, 2);
+            this.HitPointPanel.Controls.Add(this.GhoulHitPoints, 1, 3);
+            this.HitPointPanel.Location = new System.Drawing.Point(619, 276);
+            this.HitPointPanel.Name = "HitPointPanel";
+            this.HitPointPanel.RowCount = 4;
+            this.HitPointPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.HitPointPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.HitPointPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.HitPointPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.HitPointPanel.Size = new System.Drawing.Size(134, 95);
+            this.HitPointPanel.TabIndex = 14;
+            // 
+            // PlayerHitPointsCaption
+            // 
+            this.PlayerHitPointsCaption.AutoSize = true;
+            this.PlayerHitPointsCaption.Location = new System.Drawing.Point(4, 5);
+            this.PlayerHitPointsCaption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
+            this.PlayerHitPointsCaption.Name = "PlayerHitPointsCaption";
+            this.PlayerHitPointsCaption.Size = new System.Drawing.Size(36, 13);
+            this.PlayerHitPointsCaption.TabIndex = 0;
+            this.PlayerHitPointsCaption.Text = "Player";
+            // 
+            // BatHitPointsCaption
+            // 
+            this.BatHitPointsCaption.AutoSize = true;
+            this.BatHitPointsCaption.Location = new System.Drawing.Point(4, 28);
+            this.BatHitPointsCaption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
+            this.BatHitPointsCaption.Name = "BatHitPointsCaption";
+            this.BatHitPointsCaption.Size = new System.Drawing.Size(23, 13);
+            this.BatHitPointsCaption.TabIndex = 1;
+            this.BatHitPointsCaption.Text = "Bat";
+            // 
+            // GhostHitPointsCaption
+            // 
+            this.GhostHitPointsCaption.AutoSize = true;
+            this.GhostHitPointsCaption.Location = new System.Drawing.Point(4, 51);
+            this.GhostHitPointsCaption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
+            this.GhostHitPointsCaption.Name = "GhostHitPointsCaption";
+            this.GhostHitPointsCaption.Size = new System.Drawing.Size(35, 13);
+            this.GhostHitPointsCaption.TabIndex = 2;
+            this.GhostHitPointsCaption.Text = "Ghost";
+            // 
+            // GhoulHitPointsCaption
+            // 
+            this.GhoulHitPointsCaption.AutoSize = true;
+            this.GhoulHitPointsCaption.Location = new System.Drawing.Point(4, 74);
+            this.GhoulHitPointsCaption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
+            this.GhoulHitPointsCaption.Name = "GhoulHitPointsCaption";
+            this.GhoulHitPointsCaption.Size = new System.Drawing.Size(35, 13);
+            this.GhoulHitPointsCaption.TabIndex = 3;
+            this.GhoulHitPointsCaption.Text = "Ghoul";
+            // 
+            // PlayerHitPoints
+            // 
+            this.PlayerHitPoints.AutoSize = true;
+            this.PlayerHitPoints.Location = new System.Drawing.Point(49, 5);
+            this.PlayerHitPoints.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
+            this.PlayerHitPoints.Name = "PlayerHitPoints";
+            this.PlayerHitPoints.Size = new System.Drawing.Size(78, 13);
+            this.PlayerHitPoints.TabIndex = 4;
+            this.PlayerHitPoints.Text = "PlayerHitPoints";
+            // 
+            // BatHitPoints
+            // 
+            this.BatHitPoints.AutoSize = true;
+            this.BatHitPoints.Location = new System.Drawing.Point(49, 28);
+            this.BatHitPoints.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
+            this.BatHitPoints.Name = "BatHitPoints";
+            this.BatHitPoints.Size = new System.Drawing.Size(65, 13);
+            this.BatHitPoints.TabIndex = 5;
+            this.BatHitPoints.Text = "BatHitPoints";
+            // 
+            // GhostHitPoints
+            // 
+            this.GhostHitPoints.AutoSize = true;
+            this.GhostHitPoints.Location = new System.Drawing.Point(49, 51);
+            this.GhostHitPoints.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
+            this.GhostHitPoints.Name = "GhostHitPoints";
+            this.GhostHitPoints.Size = new System.Drawing.Size(77, 13);
+            this.GhostHitPoints.TabIndex = 6;
+            this.GhostHitPoints.Text = "GhostHitPoints";
+            // 
+            // GhoulHitPoints
+            // 
+            this.GhoulHitPoints.AutoSize = true;
+            this.GhoulHitPoints.Location = new System.Drawing.Point(49, 74);
+            this.GhoulHitPoints.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
+            this.GhoulHitPoints.Name = "GhoulHitPoints";
+            this.GhoulHitPoints.Size = new System.Drawing.Size(77, 13);
+            this.GhoulHitPoints.TabIndex = 7;
+            this.GhoulHitPoints.Text = "GhoulHitPoints";
+            // 
             // Dungeon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TheQuest.Properties.Resources.dungeon600x400;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(752, 399);
+            this.ClientSize = new System.Drawing.Size(763, 399);
+            this.Controls.Add(this.HitPointPanel);
             this.Controls.Add(this.MaceInvSprite);
             this.Controls.Add(this.BowInvSprite);
             this.Controls.Add(this.BluePotionInvSprite);
@@ -256,6 +371,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.BluePotionInvSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BowInvSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaceInvSprite)).EndInit();
+            this.HitPointPanel.ResumeLayout(false);
+            this.HitPointPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -276,6 +393,15 @@
         private System.Windows.Forms.PictureBox BluePotionInvSprite;
         private System.Windows.Forms.PictureBox BowInvSprite;
         private System.Windows.Forms.PictureBox MaceInvSprite;
+        private System.Windows.Forms.TableLayoutPanel HitPointPanel;
+        private System.Windows.Forms.Label PlayerHitPointsCaption;
+        private System.Windows.Forms.Label BatHitPointsCaption;
+        private System.Windows.Forms.Label GhostHitPointsCaption;
+        private System.Windows.Forms.Label GhoulHitPointsCaption;
+        private System.Windows.Forms.Label PlayerHitPoints;
+        private System.Windows.Forms.Label BatHitPoints;
+        private System.Windows.Forms.Label GhostHitPoints;
+        private System.Windows.Forms.Label GhoulHitPoints;
     }
 }
 
