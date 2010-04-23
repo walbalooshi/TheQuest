@@ -48,14 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Dungeon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Dungeon.Designer.cs">
+      <DependentUpon>Dungeon.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dungeon.resx">
+      <DependentUpon>Dungeon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -64,6 +67,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -74,6 +78,36 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dungeon600x400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ghoul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ghost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\potion_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\potion_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mace.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
