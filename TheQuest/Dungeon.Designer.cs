@@ -46,6 +46,18 @@
             this.BatHitPoints = new System.Windows.Forms.Label();
             this.GhostHitPoints = new System.Windows.Forms.Label();
             this.GhoulHitPoints = new System.Windows.Forms.Label();
+            this.MovePanel = new System.Windows.Forms.TableLayoutPanel();
+            this.MoveUp = new System.Windows.Forms.Button();
+            this.MoveLeft = new System.Windows.Forms.Button();
+            this.MoveRight = new System.Windows.Forms.Button();
+            this.MoveDown = new System.Windows.Forms.Button();
+            this.MovePanelCaption = new System.Windows.Forms.Label();
+            this.AttackPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.AttackPanelCaption = new System.Windows.Forms.Label();
+            this.AttackUp = new System.Windows.Forms.Button();
+            this.AttackLeft = new System.Windows.Forms.Button();
+            this.AttackRight = new System.Windows.Forms.Button();
+            this.AttackDown = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SwordSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BatSprite)).BeginInit();
@@ -61,6 +73,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.BowInvSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaceInvSprite)).BeginInit();
             this.HitPointPanel.SuspendLayout();
+            this.MovePanel.SuspendLayout();
+            this.AttackPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // PlayerSprite
@@ -243,7 +257,7 @@
             this.HitPointPanel.Controls.Add(this.BatHitPoints, 1, 1);
             this.HitPointPanel.Controls.Add(this.GhostHitPoints, 1, 2);
             this.HitPointPanel.Controls.Add(this.GhoulHitPoints, 1, 3);
-            this.HitPointPanel.Location = new System.Drawing.Point(619, 276);
+            this.HitPointPanel.Location = new System.Drawing.Point(619, 286);
             this.HitPointPanel.Name = "HitPointPanel";
             this.HitPointPanel.RowCount = 4;
             this.HitPointPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -255,9 +269,9 @@
             // 
             // PlayerHitPointsCaption
             // 
+            this.PlayerHitPointsCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PlayerHitPointsCaption.AutoSize = true;
             this.PlayerHitPointsCaption.Location = new System.Drawing.Point(4, 5);
-            this.PlayerHitPointsCaption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
             this.PlayerHitPointsCaption.Name = "PlayerHitPointsCaption";
             this.PlayerHitPointsCaption.Size = new System.Drawing.Size(36, 13);
             this.PlayerHitPointsCaption.TabIndex = 0;
@@ -265,9 +279,9 @@
             // 
             // BatHitPointsCaption
             // 
+            this.BatHitPointsCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.BatHitPointsCaption.AutoSize = true;
             this.BatHitPointsCaption.Location = new System.Drawing.Point(4, 28);
-            this.BatHitPointsCaption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
             this.BatHitPointsCaption.Name = "BatHitPointsCaption";
             this.BatHitPointsCaption.Size = new System.Drawing.Size(23, 13);
             this.BatHitPointsCaption.TabIndex = 1;
@@ -275,9 +289,9 @@
             // 
             // GhostHitPointsCaption
             // 
+            this.GhostHitPointsCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.GhostHitPointsCaption.AutoSize = true;
             this.GhostHitPointsCaption.Location = new System.Drawing.Point(4, 51);
-            this.GhostHitPointsCaption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
             this.GhostHitPointsCaption.Name = "GhostHitPointsCaption";
             this.GhostHitPointsCaption.Size = new System.Drawing.Size(35, 13);
             this.GhostHitPointsCaption.TabIndex = 2;
@@ -285,9 +299,9 @@
             // 
             // GhoulHitPointsCaption
             // 
+            this.GhoulHitPointsCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.GhoulHitPointsCaption.AutoSize = true;
-            this.GhoulHitPointsCaption.Location = new System.Drawing.Point(4, 74);
-            this.GhoulHitPointsCaption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
+            this.GhoulHitPointsCaption.Location = new System.Drawing.Point(4, 75);
             this.GhoulHitPointsCaption.Name = "GhoulHitPointsCaption";
             this.GhoulHitPointsCaption.Size = new System.Drawing.Size(35, 13);
             this.GhoulHitPointsCaption.TabIndex = 3;
@@ -295,9 +309,9 @@
             // 
             // PlayerHitPoints
             // 
+            this.PlayerHitPoints.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PlayerHitPoints.AutoSize = true;
             this.PlayerHitPoints.Location = new System.Drawing.Point(49, 5);
-            this.PlayerHitPoints.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
             this.PlayerHitPoints.Name = "PlayerHitPoints";
             this.PlayerHitPoints.Size = new System.Drawing.Size(78, 13);
             this.PlayerHitPoints.TabIndex = 4;
@@ -305,9 +319,9 @@
             // 
             // BatHitPoints
             // 
+            this.BatHitPoints.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.BatHitPoints.AutoSize = true;
             this.BatHitPoints.Location = new System.Drawing.Point(49, 28);
-            this.BatHitPoints.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
             this.BatHitPoints.Name = "BatHitPoints";
             this.BatHitPoints.Size = new System.Drawing.Size(65, 13);
             this.BatHitPoints.TabIndex = 5;
@@ -315,9 +329,9 @@
             // 
             // GhostHitPoints
             // 
+            this.GhostHitPoints.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.GhostHitPoints.AutoSize = true;
             this.GhostHitPoints.Location = new System.Drawing.Point(49, 51);
-            this.GhostHitPoints.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
             this.GhostHitPoints.Name = "GhostHitPoints";
             this.GhostHitPoints.Size = new System.Drawing.Size(77, 13);
             this.GhostHitPoints.TabIndex = 6;
@@ -325,13 +339,159 @@
             // 
             // GhoulHitPoints
             // 
+            this.GhoulHitPoints.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.GhoulHitPoints.AutoSize = true;
-            this.GhoulHitPoints.Location = new System.Drawing.Point(49, 74);
-            this.GhoulHitPoints.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
+            this.GhoulHitPoints.Location = new System.Drawing.Point(49, 75);
             this.GhoulHitPoints.Name = "GhoulHitPoints";
             this.GhoulHitPoints.Size = new System.Drawing.Size(77, 13);
             this.GhoulHitPoints.TabIndex = 7;
             this.GhoulHitPoints.Text = "GhoulHitPoints";
+            // 
+            // MovePanel
+            // 
+            this.MovePanel.ColumnCount = 2;
+            this.MovePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.MovePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.MovePanel.Controls.Add(this.MoveUp, 0, 1);
+            this.MovePanel.Controls.Add(this.MoveLeft, 0, 2);
+            this.MovePanel.Controls.Add(this.MoveRight, 1, 2);
+            this.MovePanel.Controls.Add(this.MoveDown, 0, 3);
+            this.MovePanel.Controls.Add(this.MovePanelCaption, 0, 0);
+            this.MovePanel.Location = new System.Drawing.Point(619, 12);
+            this.MovePanel.Name = "MovePanel";
+            this.MovePanel.RowCount = 4;
+            this.MovePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22F));
+            this.MovePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26F));
+            this.MovePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26F));
+            this.MovePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26F));
+            this.MovePanel.Size = new System.Drawing.Size(134, 117);
+            this.MovePanel.TabIndex = 15;
+            // 
+            // MoveUp
+            // 
+            this.MoveUp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MovePanel.SetColumnSpan(this.MoveUp, 2);
+            this.MoveUp.Location = new System.Drawing.Point(36, 28);
+            this.MoveUp.Name = "MoveUp";
+            this.MoveUp.Size = new System.Drawing.Size(61, 24);
+            this.MoveUp.TabIndex = 0;
+            this.MoveUp.Text = "Up";
+            this.MoveUp.UseVisualStyleBackColor = true;
+            // 
+            // MoveLeft
+            // 
+            this.MoveLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MoveLeft.Location = new System.Drawing.Point(3, 58);
+            this.MoveLeft.Name = "MoveLeft";
+            this.MoveLeft.Size = new System.Drawing.Size(61, 24);
+            this.MoveLeft.TabIndex = 1;
+            this.MoveLeft.Text = "Left";
+            this.MoveLeft.UseVisualStyleBackColor = true;
+            // 
+            // MoveRight
+            // 
+            this.MoveRight.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MoveRight.Location = new System.Drawing.Point(70, 58);
+            this.MoveRight.Name = "MoveRight";
+            this.MoveRight.Size = new System.Drawing.Size(61, 24);
+            this.MoveRight.TabIndex = 2;
+            this.MoveRight.Text = "Right";
+            this.MoveRight.UseVisualStyleBackColor = true;
+            // 
+            // MoveDown
+            // 
+            this.MoveDown.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MovePanel.SetColumnSpan(this.MoveDown, 2);
+            this.MoveDown.Location = new System.Drawing.Point(36, 89);
+            this.MoveDown.Name = "MoveDown";
+            this.MoveDown.Size = new System.Drawing.Size(61, 24);
+            this.MoveDown.TabIndex = 3;
+            this.MoveDown.Text = "Down";
+            this.MoveDown.UseVisualStyleBackColor = true;
+            // 
+            // MovePanelCaption
+            // 
+            this.MovePanelCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.MovePanelCaption.AutoSize = true;
+            this.MovePanelCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MovePanelCaption.Location = new System.Drawing.Point(3, 3);
+            this.MovePanelCaption.Name = "MovePanelCaption";
+            this.MovePanelCaption.Size = new System.Drawing.Size(49, 18);
+            this.MovePanelCaption.TabIndex = 4;
+            this.MovePanelCaption.Text = "Move";
+            // 
+            // AttackPanel
+            // 
+            this.AttackPanel.ColumnCount = 2;
+            this.AttackPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.AttackPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.AttackPanel.Controls.Add(this.AttackPanelCaption, 0, 0);
+            this.AttackPanel.Controls.Add(this.AttackUp, 0, 1);
+            this.AttackPanel.Controls.Add(this.AttackLeft, 0, 2);
+            this.AttackPanel.Controls.Add(this.AttackRight, 1, 2);
+            this.AttackPanel.Controls.Add(this.AttackDown, 0, 3);
+            this.AttackPanel.Location = new System.Drawing.Point(619, 149);
+            this.AttackPanel.Name = "AttackPanel";
+            this.AttackPanel.RowCount = 4;
+            this.AttackPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22F));
+            this.AttackPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26F));
+            this.AttackPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26F));
+            this.AttackPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26F));
+            this.AttackPanel.Size = new System.Drawing.Size(134, 117);
+            this.AttackPanel.TabIndex = 16;
+            // 
+            // AttackPanelCaption
+            // 
+            this.AttackPanelCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.AttackPanelCaption.AutoSize = true;
+            this.AttackPanelCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AttackPanelCaption.Location = new System.Drawing.Point(3, 3);
+            this.AttackPanelCaption.Name = "AttackPanelCaption";
+            this.AttackPanelCaption.Size = new System.Drawing.Size(55, 18);
+            this.AttackPanelCaption.TabIndex = 0;
+            this.AttackPanelCaption.Text = "Attack";
+            // 
+            // AttackUp
+            // 
+            this.AttackUp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AttackPanel.SetColumnSpan(this.AttackUp, 2);
+            this.AttackUp.Location = new System.Drawing.Point(36, 28);
+            this.AttackUp.Name = "AttackUp";
+            this.AttackUp.Size = new System.Drawing.Size(61, 24);
+            this.AttackUp.TabIndex = 1;
+            this.AttackUp.Text = "Up";
+            this.AttackUp.UseVisualStyleBackColor = true;
+            // 
+            // AttackLeft
+            // 
+            this.AttackLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AttackLeft.Location = new System.Drawing.Point(3, 58);
+            this.AttackLeft.Name = "AttackLeft";
+            this.AttackLeft.Size = new System.Drawing.Size(61, 24);
+            this.AttackLeft.TabIndex = 2;
+            this.AttackLeft.Text = "Left";
+            this.AttackLeft.UseVisualStyleBackColor = true;
+            // 
+            // AttackRight
+            // 
+            this.AttackRight.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AttackRight.Location = new System.Drawing.Point(70, 58);
+            this.AttackRight.Name = "AttackRight";
+            this.AttackRight.Size = new System.Drawing.Size(61, 24);
+            this.AttackRight.TabIndex = 3;
+            this.AttackRight.Text = "Right";
+            this.AttackRight.UseVisualStyleBackColor = true;
+            // 
+            // AttackDown
+            // 
+            this.AttackDown.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AttackPanel.SetColumnSpan(this.AttackDown, 2);
+            this.AttackDown.Location = new System.Drawing.Point(36, 89);
+            this.AttackDown.Name = "AttackDown";
+            this.AttackDown.Size = new System.Drawing.Size(61, 24);
+            this.AttackDown.TabIndex = 4;
+            this.AttackDown.Text = "Down";
+            this.AttackDown.UseVisualStyleBackColor = true;
             // 
             // Dungeon
             // 
@@ -339,7 +499,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TheQuest.Properties.Resources.dungeon600x400;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(763, 399);
+            this.ClientSize = new System.Drawing.Size(771, 399);
+            this.Controls.Add(this.AttackPanel);
+            this.Controls.Add(this.MovePanel);
             this.Controls.Add(this.HitPointPanel);
             this.Controls.Add(this.MaceInvSprite);
             this.Controls.Add(this.BowInvSprite);
@@ -373,6 +535,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.MaceInvSprite)).EndInit();
             this.HitPointPanel.ResumeLayout(false);
             this.HitPointPanel.PerformLayout();
+            this.MovePanel.ResumeLayout(false);
+            this.MovePanel.PerformLayout();
+            this.AttackPanel.ResumeLayout(false);
+            this.AttackPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -402,6 +568,18 @@
         private System.Windows.Forms.Label BatHitPoints;
         private System.Windows.Forms.Label GhostHitPoints;
         private System.Windows.Forms.Label GhoulHitPoints;
+        private System.Windows.Forms.TableLayoutPanel MovePanel;
+        private System.Windows.Forms.Button MoveUp;
+        private System.Windows.Forms.Button MoveLeft;
+        private System.Windows.Forms.Button MoveRight;
+        private System.Windows.Forms.Button MoveDown;
+        private System.Windows.Forms.Label MovePanelCaption;
+        private System.Windows.Forms.TableLayoutPanel AttackPanel;
+        private System.Windows.Forms.Label AttackPanelCaption;
+        private System.Windows.Forms.Button AttackUp;
+        private System.Windows.Forms.Button AttackLeft;
+        private System.Windows.Forms.Button AttackRight;
+        private System.Windows.Forms.Button AttackDown;
     }
 }
 
