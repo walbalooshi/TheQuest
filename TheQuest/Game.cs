@@ -52,7 +52,7 @@ namespace TheQuest {
         }
 
         public void Attack(Direction direction, Random random) {
-            player.Arrack(direction);
+            player.Attack(direction, random);
             foreach (Enemy enemy in Enemies) {
                 enemy.Move(random);
             }
@@ -73,11 +73,12 @@ namespace TheQuest {
             switch (level) {
                 case 1:
                     Enemies = new List<Enemy>();
-                    Enemies.Add(new Bat(this, GetRandomLocation(random), boundaries);
+                    Enemies.Add(new Bat(this, GetRandomLocation(random), boundaries));
                     WeaponInRoom = new Sword(this, GetRandomLocation(random));
                     break;
                 case 8:
                     Application.Exit();
+                    break;
             }
         }
     }

@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bat.cs" />
+    <Compile Include="BluePotion.cs" />
+    <Compile Include="Bow.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="Dungeon.cs">
       <SubType>Form</SubType>
@@ -57,6 +60,8 @@
     </Compile>
     <Compile Include="Enemy.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="IPotion.cs" />
+    <Compile Include="Mace.cs" />
     <Compile Include="Mover.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
@@ -83,6 +88,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RedPotion.cs" />
+    <Compile Include="Sword.cs" />
+    <Compile Include="Weapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dungeon600x400.png" />

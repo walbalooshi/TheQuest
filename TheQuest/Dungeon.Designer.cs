@@ -196,6 +196,7 @@
             this.SwordInvSprite.TabIndex = 9;
             this.SwordInvSprite.TabStop = false;
             this.SwordInvSprite.Visible = false;
+            this.SwordInvSprite.Click += new System.EventHandler(this.SwordInvSprite_Click);
             // 
             // RedPotionInvSprite
             // 
@@ -208,6 +209,7 @@
             this.RedPotionInvSprite.TabIndex = 10;
             this.RedPotionInvSprite.TabStop = false;
             this.RedPotionInvSprite.Visible = false;
+            this.RedPotionInvSprite.Click += new System.EventHandler(this.RedPotionInvSprite_Click);
             // 
             // BluePotionInvSprite
             // 
@@ -219,6 +221,7 @@
             this.BluePotionInvSprite.TabIndex = 11;
             this.BluePotionInvSprite.TabStop = false;
             this.BluePotionInvSprite.Visible = false;
+            this.BluePotionInvSprite.Click += new System.EventHandler(this.BluePotionInvSprite_Click);
             // 
             // BowInvSprite
             // 
@@ -231,6 +234,7 @@
             this.BowInvSprite.TabIndex = 12;
             this.BowInvSprite.TabStop = false;
             this.BowInvSprite.Visible = false;
+            this.BowInvSprite.Click += new System.EventHandler(this.BowInvSprite_Click);
             // 
             // MaceInvSprite
             // 
@@ -242,6 +246,7 @@
             this.MaceInvSprite.TabIndex = 13;
             this.MaceInvSprite.TabStop = false;
             this.MaceInvSprite.Visible = false;
+            this.MaceInvSprite.Click += new System.EventHandler(this.MaceInvSprite_Click);
             // 
             // HitPointPanel
             // 
@@ -377,6 +382,7 @@
             this.MoveUp.TabIndex = 0;
             this.MoveUp.Text = "Up";
             this.MoveUp.UseVisualStyleBackColor = true;
+            this.MoveUp.Click += new System.EventHandler(this.MoveUp_Click);
             // 
             // MoveLeft
             // 
@@ -387,6 +393,7 @@
             this.MoveLeft.TabIndex = 1;
             this.MoveLeft.Text = "Left";
             this.MoveLeft.UseVisualStyleBackColor = true;
+            this.MoveLeft.Click += new System.EventHandler(this.MoveLeft_Click);
             // 
             // MoveRight
             // 
@@ -397,6 +404,7 @@
             this.MoveRight.TabIndex = 2;
             this.MoveRight.Text = "Right";
             this.MoveRight.UseVisualStyleBackColor = true;
+            this.MoveRight.Click += new System.EventHandler(this.MoveRight_Click);
             // 
             // MoveDown
             // 
@@ -408,6 +416,7 @@
             this.MoveDown.TabIndex = 3;
             this.MoveDown.Text = "Down";
             this.MoveDown.UseVisualStyleBackColor = true;
+            this.MoveDown.Click += new System.EventHandler(this.MoveDown_Click);
             // 
             // MovePanelCaption
             // 
@@ -519,6 +528,7 @@
             this.Controls.Add(this.SwordSprite);
             this.Name = "Dungeon";
             this.Text = "The Quest";
+            this.Load += new System.EventHandler(this.Dungeon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PlayerSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SwordSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BatSprite)).EndInit();

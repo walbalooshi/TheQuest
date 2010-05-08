@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace TheQuest {
     public abstract class Mover {
-        public const int MoveInterval = 10;
+        private const int MoveInterval = 10;
         protected Point location;
         
         public Point Location { get { return location; } }
@@ -48,6 +48,7 @@ namespace TheQuest {
                     if (newLocation.X + MoveInterval <= boundaries.Right) {
                         newLocation.X += MoveInterval;
                     }
+                    break;
                 default: break;
             }
             return newLocation;

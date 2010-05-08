@@ -4,10 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace TheQuest {
-    public enum Direction {
-        Up,
-        Right,
-        Down,
-        Left
+    public interface IPotion {
+        bool Used { get; } 
     }
 }
