@@ -63,7 +63,7 @@ namespace TheQuest {
 
         public bool CheckPotionUsed(string potionName) {
             IPotion potion;
-            bool potionUsed = false;
+            bool potionUsed = true;
             
             foreach (Weapon weapon in inventory) {
                 if (weapon.Name == potionName && weapon is IPotion) {

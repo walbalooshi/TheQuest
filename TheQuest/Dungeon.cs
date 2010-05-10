@@ -143,25 +143,27 @@ namespace TheQuest {
             RedPotionSprite.Visible = false;
             BluePotionSprite.Visible = false;
 
-            Control weaponControl = null;
-            switch (game.WeaponInRoom.Name) {
-                case "Sword":
-                    weaponControl = SwordSprite;
-                    break;
-                //More Cases
-            }
+            if (game.WeaponInRoom != null) {
+                Control weaponControl = null;
+                switch (game.WeaponInRoom.Name) {
+                    case "Sword":
+                        weaponControl = SwordSprite;
+                        break;
+                    //More Cases
+                }
 
-            if (game.WeaponInRoom.PickedUp) {
-                weaponControl.Visible = false;
-            } else {
-                weaponControl.Visible = true;
-                weaponControl.Location = game.WeaponInRoom.Location;
+                if (game.WeaponInRoom.PickedUp) {
+                    weaponControl.Visible = false;
+                } else {
+                    weaponControl.Visible = true;
+                    weaponControl.Location = game.WeaponInRoom.Location;
+                }
             }
-
             SwordInvSprite.Visible = false;
             BowInvSprite.Visible = false;
             MaceInvSprite.Visible = false;
             RedPotionInvSprite.Visible = false;
+            BluePotionInvSprite.Visible = false;
 
             if (game.CheckPlayerInventory("Sword")) {
                 SwordInvSprite.Visible = true;

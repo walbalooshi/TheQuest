@@ -15,8 +15,7 @@ namespace TheQuest {
                 if(!DamageEnemy(ClockwiseDirection(direction), 10, 3, random)) {
                     DamageEnemy(CounterClockWiseDirection(direction), 10, 3, random);
                 }
-            }
-            
+            }            
         }
     }
 }

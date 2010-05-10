@@ -61,6 +61,7 @@
     <Compile Include="Enemy.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Ghost.cs" />
+    <Compile Include="Ghoul.cs" />
     <Compile Include="IPotion.cs" />
     <Compile Include="ISprite.cs" />
     <Compile Include="Mace.cs" />
