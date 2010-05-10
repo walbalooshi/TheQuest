@@ -6,6 +6,6 @@ using System.Drawing;
 
 namespace TheQuest {
     interface ISprite {
-        public Size SpriteSize { get; }
+        Size SpriteSize { get; }
     }
 }

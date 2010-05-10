@@ -24,33 +24,37 @@ namespace TheQuest {
         private bool Nearby(Point playerLocation, Enemy enemy, Direction direction, int distance){
             bool isNearby = false;
             Rectangle enemySpriteBoundary = new Rectangle(enemy.Location, enemy.SpriteSize);
-            Rectangle playerAttackArea;
+            Rectangle playerAttackArea = new Rectangle();
 
             switch (direction) {
                 case Direction.Up:
-                    playerAttackArea = new Rectangle(playerLocation.X, 
-                                                     playerLocation.Y - distance, 
-                                                     game.PlayerSpriteSize.Width, 
-                                                     distance);
-
+                    playerAttackArea.Location = new Point(playerLocation.X,
+                                                          playerLocation.Y 
+                                                            - distance);
+                    playerAttackArea.Width = game.PlayerSpriteSize.Width;
+                    playerAttackArea.Height = distance;
                     break;
                 case Direction.Right:
-                    playerAttackArea = new Rectangle(playerLocation.X + game.PlayerSpriteSize.Width,
-                                                     playerLocation.Y,
-                                                     distance,
-                                                     game.PlayerSpriteSize.Height);
+                    playerAttackArea.Location = new Point(playerLocation.X 
+                                                            + game.PlayerSpriteSize.Width,
+                                                          playerLocation.Y);
+                    playerAttackArea.Width = distance;
+                    playerAttackArea.Height = game.PlayerSpriteSize.Height;
                     break;
                 case Direction.Down:
-                    playerAttackArea = new Rectangle(playerLocation.X,
-                                                     playerLocation.Y + game.PlayerSpriteSize.Height,
-                                                     game.PlayerSpriteSize.Width,
-                                                     distance);
+                    playerAttackArea.Location = new Point(playerLocation.X,
+                                                          playerLocation.Y 
+                                                            + game.PlayerSpriteSize.Height);
+                    playerAttackArea.Width = game.PlayerSpriteSize.Width;
+                    playerAttackArea.Height = distance;
                     break;
                 case Direction.Left:
-                    playerAttackArea = new Rectangle(playerLocation.X + distance,
-                                                     playerLocation.Y,
-                                                     distance,
-                                                     game.PlayerSpriteSize.Height);
+                    playerAttackArea.Location = new Point(playerLocation.X 
+                                                            + distance,
+                                                          playerLocation.Y);
+                    playerAttackArea.Width = distance;
+                    playerAttackArea.Height = game.PlayerSpriteSize.Height;
+                    break;
             }
 
             if (playerAttackArea.IntersectsWith(enemySpriteBoundary)) {
