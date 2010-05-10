@@ -13,6 +13,7 @@ namespace TheQuest {
         private Player player;
         public Point PlayerLocation { get { return player.Location; } }
         public int PlayerHitPoints { get { return player.HitPoints; } }
+        public Size PlayerSpriteSize { get { return player.SpriteSize; } }
         public List<string> PlayerWeapons { get { return player.Weapons; } }
 
         private int level = 0;
@@ -25,7 +26,7 @@ namespace TheQuest {
             this.boundaries = boundaries;
             player = new Player(this,
                 new Point(boundaries.Left + 10, boundaries.Top + 70),
-                boundaries);
+                new Size(30, 30));
         }
 
         public void Move(Direction direction, Random random){
@@ -43,6 +44,10 @@ namespace TheQuest {
             return player.Weapons.Contains(weaponName);
         }
 
+        public bool CheckPotionUsed(string potionName) {
+            return player.CheckPotionUsed(potionName);
+        }
+
         public void HitPlayer(int maxDamage, Random random) {
             player.Hit(maxDamage, random);
         }
@@ -54,7 +59,9 @@ namespace TheQuest {
         public void Attack(Direction direction, Random random) {
             player.Attack(direction, random);
             foreach (Enemy enemy in Enemies) {
-                enemy.Move(random);
+                if (!enemy.Dead) {
+                    enemy.Move(random);
+                }
             }
         }
 
@@ -73,7 +80,7 @@ namespace TheQuest {
             switch (level) {
                 case 1:
                     Enemies = new List<Enemy>();
-                    Enemies.Add(new Bat(this, GetRandomLocation(random), boundaries));
+                    Enemies.Add(new Bat(this, GetRandomLocation(random), new Size(30, 30)));
                     WeaponInRoom = new Sword(this, GetRandomLocation(random));
                     break;
                 case 8:

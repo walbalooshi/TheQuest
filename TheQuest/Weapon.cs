@@ -21,31 +21,58 @@ namespace TheQuest {
         public abstract string Name { get; }
         public abstract void Attack(Direction direction, Random random);
 
-        private bool Nearby(Point initialLocation, Point targetLocation, int distance){
-            if (Math.Abs(initialLocation.X - targetLocation.X) < distance &&
-                Math.Abs(initialLocation.Y - targetLocation.Y) < distance) {
-                return true;
-            } else {
-                return false;
+        private bool Nearby(Point playerLocation, Enemy enemy, Direction direction, int distance){
+            bool isNearby = false;
+            Rectangle enemySpriteBoundary = new Rectangle(enemy.Location, enemy.SpriteSize);
+            Rectangle playerAttackArea;
+
+            switch (direction) {
+                case Direction.Up:
+                    playerAttackArea = new Rectangle(playerLocation.X, 
+                                                     playerLocation.Y - distance, 
+                                                     game.PlayerSpriteSize.Width, 
+                                                     distance);
+
+                    break;
+                case Direction.Right:
+                    playerAttackArea = new Rectangle(playerLocation.X + game.PlayerSpriteSize.Width,
+                                                     playerLocation.Y,
+                                                     distance,
+                                                     game.PlayerSpriteSize.Height);
+                    break;
+                case Direction.Down:
+                    playerAttackArea = new Rectangle(playerLocation.X,
+                                                     playerLocation.Y + game.PlayerSpriteSize.Height,
+                                                     game.PlayerSpriteSize.Width,
+                                                     distance);
+                    break;
+                case Direction.Left:
+                    playerAttackArea = new Rectangle(playerLocation.X + distance,
+                                                     playerLocation.Y,
+                                                     distance,
+                                                     game.PlayerSpriteSize.Height);
             }
+
+            if (playerAttackArea.IntersectsWith(enemySpriteBoundary)) {
+                isNearby = true;
+            }
+
+            return isNearby;
         }
 
-        protected bool DamageEnemy(Direction direction, int radius, int damage,Random random) {
-            Point target = game.PlayerLocation;
-            for (int distance = 0; distance < radius; distance++) {
-                foreach (Enemy enemy in game.Enemies) {
-                    if(Nearby(enemy.Location, target, radius)){
-                        enemy.Hit(damage, random);
-                        return true;
-                    }
+        protected bool DamageEnemy(Direction direction, int radius, int damage, Random random) {
+            Point playerLocation = game.PlayerLocation;
+            foreach (Enemy enemy in game.Enemies) {
+                if(!enemy.Dead && Nearby(playerLocation, enemy, direction, radius)){
+                    enemy.Hit(damage, random);
+                    return true;
                 }
-                target = Move(direction, game.Boundaries);
-            }
+            }                
             return false;
         }
 
         protected Direction ClockwiseDirection(Direction direction) {
-            Direction clockWiseDirection;
+            Direction clockWiseDirection = direction;
 
             switch (direction) {
                 case Direction.Up:
@@ -66,7 +93,7 @@ namespace TheQuest {
         }
 
         protected Direction CounterClockWiseDirection(Direction direction) {
-            Direction counterClockWiseDirection;
+            Direction counterClockWiseDirection = direction;
 
             switch (direction) {
                 case Direction.Up:

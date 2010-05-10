@@ -95,5 +95,95 @@ namespace TheQuest {
             game.Move(Direction.Left, random);
             UpdateCharacters();
         }
+
+        private void AttackUp_Click(object sender, EventArgs e) {
+            game.Attack(Direction.Up, random);
+            UpdateCharacters();
+        }
+
+        private void AttackRight_Click(object sender, EventArgs e) {
+            game.Attack(Direction.Right, random);
+            UpdateCharacters();
+        }
+
+        private void AttackDown_Click(object sender, EventArgs e) {
+            game.Attack(Direction.Down, random);
+            UpdateCharacters();
+        }
+
+        private void AttackLeft_Click(object sender, EventArgs e) {
+            game.Attack(Direction.Left, random);
+            UpdateCharacters();
+        }
+
+        public void UpdateCharacters() {
+            PlayerSprite.Location = game.PlayerLocation;
+            PlayerHitPoints.Text = game.PlayerHitPoints.ToString();
+
+            int enemiesShown = 0;
+
+            foreach (Enemy enemy in game.Enemies) {
+                if (enemy is Bat) {
+                    BatSprite.Location = enemy.Location;
+                    BatHitPoints.Text = enemy.HitPoints.ToString();
+                    if (enemy.HitPoints > 0) {
+                        BatSprite.Visible = true;
+                        enemiesShown++;
+                    } else {
+                        BatSprite.Visible = false;
+                        //Clear hit point label
+                    }
+                }
+                //More Enemies
+            }
+
+            SwordSprite.Visible = false;
+            BowSprite.Visible = false;
+            MaceSprite.Visible = false;
+            RedPotionSprite.Visible = false;
+            BluePotionSprite.Visible = false;
+
+            Control weaponControl = null;
+            switch (game.WeaponInRoom.Name) {
+                case "Sword":
+                    weaponControl = SwordSprite;
+                    break;
+                //More Cases
+            }
+
+            if (game.WeaponInRoom.PickedUp) {
+                weaponControl.Visible = false;
+            } else {
+                weaponControl.Visible = true;
+                weaponControl.Location = game.WeaponInRoom.Location;
+            }
+
+            SwordInvSprite.Visible = false;
+            BowInvSprite.Visible = false;
+            MaceInvSprite.Visible = false;
+            RedPotionInvSprite.Visible = false;
+
+            if (game.CheckPlayerInventory("Sword")) {
+                SwordInvSprite.Visible = true;
+            }
+
+            if (game.CheckPlayerInventory("Red Potion")) {
+                if (!game.CheckPotionUsed("Red Potion")) {
+                    RedPotionInvSprite.Visible = true;
+                }
+            }
+            //More statements
+
+            if (game.PlayerHitPoints <= 0) {
+                MessageBox.Show("You died");
+                Application.Exit();
+            }
+
+            if (enemiesShown < 1) {
+                MessageBox.Show("You have defeated the enemies on this level");
+                game.NewLevel(random);
+                UpdateCharacters();
+            }
+        }
     }
 }

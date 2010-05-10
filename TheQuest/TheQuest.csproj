@@ -61,6 +61,7 @@
     <Compile Include="Enemy.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="IPotion.cs" />
+    <Compile Include="ISprite.cs" />
     <Compile Include="Mace.cs" />
     <Compile Include="Mover.cs" />
     <Compile Include="Player.cs" />

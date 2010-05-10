@@ -5,11 +5,12 @@ using System.Text;
 using System.Drawing;
 
 namespace TheQuest {
-    public abstract class Enemy : Mover {
+    public abstract class Enemy : Mover, ISprite {
         private const int NearPlayerDistance = 25;
         private int hitPoints;
 
         public int HitPoints { get { return hitPoints; } }
+        public Size SpriteSize { get; private set; }
 
         public bool Dead {
             get {
@@ -18,9 +19,10 @@ namespace TheQuest {
             }
         }
 
-        public Enemy(Game game, Point location, Rectangle boundaries, int hitPoints)
+        public Enemy(Game game, Point location, int hitPoints, Size spriteSize)
                 : base(game, location) {
             this.hitPoints = hitPoints;
+            SpriteSize = spriteSize;
         }
 
         public abstract void Move(Random random);

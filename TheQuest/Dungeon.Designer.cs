@@ -87,7 +87,6 @@
             this.PlayerSprite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PlayerSprite.TabIndex = 0;
             this.PlayerSprite.TabStop = false;
-            this.PlayerSprite.Visible = false;
             // 
             // SwordSprite
             // 
@@ -470,6 +469,7 @@
             this.AttackUp.TabIndex = 1;
             this.AttackUp.Text = "Up";
             this.AttackUp.UseVisualStyleBackColor = true;
+            this.AttackUp.Click += new System.EventHandler(this.AttackUp_Click);
             // 
             // AttackLeft
             // 
@@ -480,6 +480,7 @@
             this.AttackLeft.TabIndex = 2;
             this.AttackLeft.Text = "Left";
             this.AttackLeft.UseVisualStyleBackColor = true;
+            this.AttackLeft.Click += new System.EventHandler(this.AttackLeft_Click);
             // 
             // AttackRight
             // 
@@ -490,6 +491,7 @@
             this.AttackRight.TabIndex = 3;
             this.AttackRight.Text = "Right";
             this.AttackRight.UseVisualStyleBackColor = true;
+            this.AttackRight.Click += new System.EventHandler(this.AttackRight_Click);
             // 
             // AttackDown
             // 
@@ -501,6 +503,7 @@
             this.AttackDown.TabIndex = 4;
             this.AttackDown.Text = "Down";
             this.AttackDown.UseVisualStyleBackColor = true;
+            this.AttackDown.Click += new System.EventHandler(this.AttackDown_Click);
             // 
             // Dungeon
             // 
