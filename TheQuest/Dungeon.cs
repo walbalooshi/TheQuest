@@ -115,6 +115,22 @@ namespace TheQuest {
             game.Attack(Direction.Left, random);
             UpdateCharacters();
         }
+        
+        public bool UpdateEnemySprite(Enemy enemy, PictureBox enemySprite, Label enemyHitPoints){
+            bool enemySpriteUpdated = false;
+            
+            enemyHitPoints.Text = enemy.HitPoints.ToString();
+
+            if (enemy.HitPoints > 0) {
+                enemySprite.Location = enemy.Location;
+                enemySprite.Visible = true;
+                enemySpriteUpdated = true;
+            } else {
+                enemySprite.Visible = false;
+            }
+
+            return enemySpriteUpdated;
+        }
 
         public void UpdateCharacters() {
             PlayerSprite.Location = game.PlayerLocation;
@@ -124,17 +140,20 @@ namespace TheQuest {
 
             foreach (Enemy enemy in game.Enemies) {
                 if (enemy is Bat) {
-                    BatSprite.Location = enemy.Location;
-                    BatHitPoints.Text = enemy.HitPoints.ToString();
-                    if (enemy.HitPoints > 0) {
-                        BatSprite.Visible = true;
+                    if (UpdateEnemySprite(enemy, BatSprite, BatHitPoints)) {
                         enemiesShown++;
-                    } else {
-                        BatSprite.Visible = false;
-                        //Clear hit point label
                     }
                 }
-                //More Enemies
+                if(enemy is Ghost){
+                    if (UpdateEnemySprite(enemy, GhostSprite, GhostHitPoints)) {
+                        enemiesShown++;
+                    }
+                }
+                if (enemy is Ghoul) {
+                    if (UpdateEnemySprite(enemy, GhoulSprite, GhoulHitPoints)) {
+                        enemiesShown++;
+                    }
+                }
             }
 
             SwordSprite.Visible = false;
@@ -149,7 +168,18 @@ namespace TheQuest {
                     case "Sword":
                         weaponControl = SwordSprite;
                         break;
-                    //More Cases
+                    case "Bow":
+                        weaponControl = BowSprite;
+                        break;
+                    case "Mace":
+                        weaponControl = MaceSprite;
+                        break;
+                    case "Red Potion":
+                        weaponControl = RedPotionSprite;
+                        break;
+                    case "Blue Potion":
+                        weaponControl = BluePotionSprite;
+                        break;
                 }
 
                 if (game.WeaponInRoom.PickedUp) {
@@ -169,12 +199,25 @@ namespace TheQuest {
                 SwordInvSprite.Visible = true;
             }
 
+            if (game.CheckPlayerInventory("Bow")) {
+                BowInvSprite.Visible = true;
+            }
+
+            if (game.CheckPlayerInventory("Mace")) {
+                MaceInvSprite.Visible = true;
+            }
+
             if (game.CheckPlayerInventory("Red Potion")) {
                 if (!game.CheckPotionUsed("Red Potion")) {
                     RedPotionInvSprite.Visible = true;
                 }
             }
-            //More statements
+
+            if (game.CheckPlayerInventory("Blue Potion")) {
+                if (!game.CheckPotionUsed("Blue Potion")) {
+                    BluePotionInvSprite.Visible = true;
+                }
+            }
 
             if (game.PlayerHitPoints <= 0) {
                 MessageBox.Show("You died");

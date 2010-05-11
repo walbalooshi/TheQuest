@@ -97,6 +97,7 @@ namespace TheQuest {
                     Enemies.Clear();
                     Enemies.Add(new Bat(this, GetRandomLocation(random), new Size(30, 30)));
                     Enemies.Add(new Ghost(this, GetRandomLocation(random), new Size(30, 30)));
+                    WeaponInRoom = null;
                     if (CheckPlayerInventory("Bow")) {
                         if (!CheckPlayerInventory("Blue Potion") 
                                 || (CheckPlayerInventory("Blue Potion") 
@@ -124,6 +125,7 @@ namespace TheQuest {
                     Enemies.Add(new Bat(this, GetRandomLocation(random), new Size(30, 30)));
                     Enemies.Add(new Ghost(this, GetRandomLocation(random), new Size(30, 30)));
                     Enemies.Add(new Ghoul(this, GetRandomLocation(random), new Size(30, 30)));
+                    WeaponInRoom = null;
                     if (CheckPlayerInventory("Mace")) {
                         if (!CheckPlayerInventory("Red Potion")
                                 || (CheckPlayerInventory("Red Potion")
