@@ -10,7 +10,7 @@ namespace TheQuest {
             : base(game, location, 6, spriteSize) { }
 
         public override void Move(Random random) {
-            if (random.Next(1, 2) == 1) {
+            if (random.Next(1, 3) == 1) {
                 location = Move(FindPlayerDirection(game.PlayerLocation), game.Boundaries);
             } else {
                 location = Move((Direction)random.Next(1, 4), game.Boundaries);
